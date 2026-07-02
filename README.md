@@ -1,5 +1,9 @@
 # Redrob Intelligent Candidate Ranking System
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://india-runs-event-rank-engine.streamlit.app/)
+
+> 🚀 **Live Demo**: [india-runs-event-rank-engine.streamlit.app](https://india-runs-event-rank-engine.streamlit.app/)
+
 This repository implements a complete, submission-ready candidate ranking pipeline for the Redrob "Intelligent Candidate Discovery & Ranking Challenge."
 
 The system is designed for **production-scale recruiting**, optimizing for speed, safety against data anomalies (honeypots), and behavioral availability indicators.
