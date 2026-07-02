@@ -1,0 +1,52 @@
+# Redrob Hackathon — Submission Metadata
+team_name: "BIT-ML-Foundry"
+
+primary_contact:
+  name: "Akash G"
+  email: "akashg944232@gmail.com"
+team_members:
+  - name: "Akash G"
+    email: "akashg944232@gmail.com"
+    role: "Team Leader / ML Engineer"
+  - name: "KOWSIK Y"
+    email: "kowsik.al23@bitsathy.ac.in"
+    role: "ML Engineer"
+  - name: "KISHORE R"
+    email: "kishore.al23@bitsathy.ac.in"
+    role: "ML Engineer"
+  - name: "Ashwin M"
+    email: "ashtamil543@gmail.com"
+    role: "ML Engineer"
+
+github_repo: "https://github.com/Akash-AIML/India-Runs-Event-Rank-Engine"
+sandbox_link: "https://huggingface.co/spaces/akashg944232/redrob-intelligent-candidate-ranker"
+
+reproduce_command: "python src/rank.py --candidates ./data/candidates.jsonl --jd ./data/job_description.docx --out ./submission.csv --artifacts-dir ./artifacts"
+
+compute:
+  platform: "Local Linux Box"
+  cpu_cores: 8
+  ram_gb: 16
+  python_version: "3.11.4"
+  os: "Ubuntu 22.04 LTS"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: true
+  pre_computation_time_minutes: 1
+
+ai_tools_used:
+  - "Gemini"
+  - "Claude"
+
+ai_usage_summary: |
+  Used Gemini for offline reasoning generation and code structural design. No candidate data was sent to LLM APIs during sandbox ranking execution.
+
+methodology_summary: |
+  Hybrid BM25 and keyword search ranker combined with offline precomputed cross-similarity reranking. Leverages structured checks to filter out all 65 honeypots (impossible career timelines, expert proficiency with 0 duration) and IT-services-only histories. Dynamic scoring balances experience curves, local relocation preference, and Redrob signals. Reasonings are mapped from precomputed RAG outputs and fallback schemas.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true

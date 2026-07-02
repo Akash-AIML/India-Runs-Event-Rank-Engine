@@ -1,0 +1,35 @@
+name: Redrob Ranker CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-name: '3.11'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        # Install pytest for running tests if preferred
+        pip install pytest
+
+    - name: Run unit tests
+      run: |
+        python -m unittest test_ranker.py
+
+    - name: Validate dry run output format
+      run: |
+        # Generate a dry-run submission and validate it
+        python rank.py --candidates ./sample_candidates.json --out ./dry_run_submission.csv
+        python validate_submission.py ./dry_run_submission.csv
