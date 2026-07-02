@@ -19,7 +19,7 @@ team_members:
     role: "ML Engineer"
 
 github_repo: "https://github.com/Akash-AIML/India-Runs-Event-Rank-Engine"
-sandbox_link: "https://huggingface.co/spaces/akashg944232/redrob-intelligent-candidate-ranker"
+sandbox_link: "https://india-runs-event-rank-engine.streamlit.app/"
 
 reproduce_command: "python src/rank.py --candidates ./data/candidates.jsonl --jd ./data/job_description.docx --out ./submission.csv --artifacts-dir ./artifacts"
 
