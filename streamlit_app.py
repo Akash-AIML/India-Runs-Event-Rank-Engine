@@ -71,6 +71,8 @@ st.markdown('<div class="subtitle">Calibrated Ranking Pipeline & Dynamic Feature
 
 # Default paths
 DEFAULT_CANDIDATES_PATH = "./data/candidates.jsonl"
+if not os.path.exists(DEFAULT_CANDIDATES_PATH):
+    DEFAULT_CANDIDATES_PATH = "./data/sample_candidates.jsonl"
 DEFAULT_JD_PATH = "./data/job_description.docx"
 DEFAULT_ARTIFACTS_DIR = "./artifacts"
 
